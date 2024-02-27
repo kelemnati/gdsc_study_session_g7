@@ -1,4 +1,4 @@
-# gdsc_bookstore
+# book_store_main
 
 A new Flutter project.
 

@@ -1,17 +1,18 @@
+import 'package:book_store_main/book_details.dart';
 import 'package:flutter/material.dart';
-import 'package:gdsc_bookstore/bookDetails.dart';
 
-class HorizontalScroll extends StatefulWidget {
-  const HorizontalScroll(
+class Recommendation extends StatefulWidget {
+  const Recommendation(
       {super.key, required this.bookTitle, required this.images});
+
   final List bookTitle;
   final List images;
 
   @override
-  State<HorizontalScroll> createState() => _HorizontalScrollState();
+  State<Recommendation> createState() => _RecommendationState();
 }
 
-class _HorizontalScrollState extends State<HorizontalScroll> {
+class _RecommendationState extends State<Recommendation> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -22,10 +23,13 @@ class _HorizontalScrollState extends State<HorizontalScroll> {
             padding: const EdgeInsets.all(10.0),
             child: InkWell(
               onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => BookDeatils(
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => BookDetails(
                         path: widget.images[index],
-                        title: widget.bookTitle[index])));
+                        title: widget.bookTitle[index]),
+                  ),
+                );
               },
               child: Container(
                 width: 150,
